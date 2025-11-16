@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Indra Cyber School</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+    <style>
+        :root {
+            --bg1: #0b1120;
+            --bg2: #0b132a;
+
+            --ink: #e5e7eb;
+            --budeg: #a3a3a3;
+
+            --tsenher: #3b82f6;
+            --ugyan: #8b5cf6;
+            --yagaan: #ec4899;
+
+            --shil1: rgba(255, 255, 255, 0.04);
+            --shil2: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.12);
+
+            --jijig_hairtsag: var(--shil2);
+
+            --font: "Comfortaa", sans-serif;
+
+            --transition: 0.25s ease;
+            --radius: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font);
+        }
+
+        html,
+        body {
+            height: 100%;
+            color: var(--ink);
+            background:
+                radial-gradient(1200px 600px at 10% -10%, #6366f118, transparent),
+                radial-gradient(900px 500px at 120% 10%, #22c55e18, transparent),
+                linear-gradient(180deg, var(--bg1), var(--bg2));
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .hairtsag {
+            max-width: 1800px;
+            margin: auto;
+            padding: 16px;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+
+            background: color-mix(in oklab, var(--shil2) 90%, transparent);
+            backdrop-filter: blur(10px) saturate(130%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav .hairtsag {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+        }
+
+        .logo img {
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-left: auto;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 10px 16px;
+            border-radius: var(--radius);
+            background: var(--shil1);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--budeg);
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover {
+            background: color-mix(in oklab, var(--ink) 12%, var(--shil1));
+            color: var(--ink);
+        }
+
+        .tab-btn.active {
+            background: var(--tsenher);
+            color: white;
+            border-color: var(--tsenher);
+            box-shadow: 0 4px 12px #3b82f655;
+        }
+
+        .udirdlaga {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-left: 12px;
+        }
+
+        .zogs {
+            padding: 8px 12px;
+            border-radius: 12px;
+            background: var(--shil1);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .zogs:hover {
+            background: var(--shil2);
+        }
+
+        .zogs.paused {
+            background: #2d1e0f;
+            border-color: #b45309;
+            color: #fbbf24;
+        }
+
+        #hugastaa_zuraas {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            background: var(--tsenher);
+            width: 0;
+            transition: width 0.25s linear;
+            z-index: 60;
+        }
+
+        #hh {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            margin-top: 20px;
+        }
+
+        #hh.garah {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        #hh.oroh {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .jijig_hairtsag {
+            background: var(--shil2);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px #00000030;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .jijig_hairtsag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px #00000045;
+        }
+
+        .jijig_hairtsag .head {
+            padding: 12px 16px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .jijig_hairtsag .body {
+            padding: 16px;
+        }
+
+        .head.tsenher {
+            background: var(--tsenher)
+        }
+
+        .grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        @media(min-width: 1200px) {
+            .grid {
+                grid-template-columns: repeat(5, 1fr) !important;
+            }
+        }
+
+        @media(min-width:768px) {
+            .grid.cols-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .grid.cols-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid.cols-5 {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        .item {
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--shil1);
+            display: flex;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .item:hover {
+            background: var(--shil2);
+        }
+
+        .small {
+            font-size: 13px;
+        }
+
+        .budeg {
+            color: var(--budeg);
+        }
+
+        .shineT {
+            padding: 3px 8px;
+            font-size: 10px;
+            background: var(--yagaan);
+            color: white;
+            border-radius: 999px;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: #475569;
+            border: none;
+        }
+
+        .dot.active {
+            background: var(--tsenher);
+        }
+
+        #errorBanner {
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            background: #3b0d0c;
+            color: #fca5a5;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid #ef4444;
+            display: none;
+            z-index: 100;
+        }
+
+        .centerMsg {
+            padding: 40px;
+            text-align: center;
+            color: var(--budeg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="hairtsag">
+            <div class="logo">
+                <a href="index.html"><img src="logot.png"></a>
+            </div>
+
+            <nav class="tabs" id="tabs"></nav>
+
+
+            <div class="udirdlaga">
+                <button id="toggleAuto" class="zogs"><span id="autoText">Автомат</span></button>
+                <div style="text-align:right">
+                    <div id="clock" style="font-weight:700;font-size:14px"></div>
+                    <div id="date" class="small budeg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hairtsag" id="hh"></div>
+
+    <div id="hugastaa_zuraas"></div>
+    <div id="errorBanner"></div>
+
+    <script>
+        const DATA_URL = 'data.json';
+        const ROTATE_MS = 20000;
+        const POLL_MS = 60000;
+        const shine_odr = 3;
+
+        const TABS = [
+            { key: 'huvaari', label: 'Хуваарь' },
+            { key: 'duguilan', label: 'Дугуйлан' },
+            { key: 'szuich', label: 'Сэтгэлзүйч' },
+            { key: 'menu', label: 'Меню' },
+            { key: 'durem', label: 'Дүрэм' },
+            { key: 'eventuud', label: 'Эвент' }
+        ];
+
+        const WEEKDAYS_MN = {
+            davaa: 'Даваа',
+            mygmar: 'Мягмар',
+            lhagva: 'Лхагва',
+            purev: 'Пүрэв',
+            baasan: 'Баасан'
+        };
+
+        const $ = s => document.querySelector(s);
+        const $$ = s => Array.from(document.querySelectorAll(s));
+
+        const el = (tag, props = {}, ...children) => {
+            const node = document.createElement(tag);
+            for (const [k, v] of Object.entries(props || {})) {
+                if (k === 'class') node.className = v;
+                else if (k === 'html') node.innerHTML = v;
+                else node.setAttribute(k, v);
+            }
+            children.forEach(c =>
+                node.appendChild(typeof c === 'string' ? document.createTextNode(c) : c)
+            );
+            return node;
+        };
+
+        const store = { data: {} };
+        let active = 'huvaari';
+        let paused = false;
+        let rotateTimer = null;
+        let hugastaa_zuraas = 0;
+        let pollTimer = null;
+        let barStart = 0;
+        let elapsed = 0;
+
+        function sshine(updated) {
+            if (!updated) return false;
+            const d = new Date(updated);
+            return Date.now() - d.getTime() <= shine_odr * 86400000;
+        }
+
+        function Tshine() {
+            return el("span", { class: "shineT" }, "ШИНЭ");
+        }
+
+        function showError(msg) {
+            const banner = $('#errorBanner');
+            banner.textContent = msg;
+            banner.style.display = 'block';
+            setTimeout(() => banner.style.display = 'none', 5000);
+        }
+
+        async function pollData() {
+            try {
+                const res = await fetch(DATA_URL, { cache: "no-store" });
+                if (!res.ok) throw new Error("Fetch failed");
+                store.data = await res.json();
+                render();
+            } catch (err) {
+                showError("JSON load error: " + err.message);
+            }
+        }
+
+        function startPolling() {
+            pollData();
+            clearInterval(pollTimer);
+            pollTimer = setInterval(pollData, POLL_MS);
+        }
+
+        function startClock() {
+            const C = $('#clock');
+            const D = $('#date');
+            setInterval(() => {
+                const now = new Date();
+                C.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                D.textContent = now.toLocaleDateString('mn-MN', { year: 'numeric', month: '2-digit', day: '2-digit', weekday: 'short' });
+            }, 1000);
+        }
+
+        function buildTabs() {
+            const nav = $('#tabs');
+            nav.innerHTML = "";
+            TABS.forEach(t => {
+                const b = el("button", { class: `tab-btn ${active === t.key ? 'active' : ''}`, "data-key": t.key }, t.label);
+                b.onclick = () => {
+                    active = t.key;
+                    render(true);
+                };
+                nav.appendChild(b);
+            });
+        }
+
+        function resetBar() {
+            elapsed = 0;
+            const bar = $('#hugastaa_zuraas');
+            bar.style.transition = 'none';
+            bar.style.width = '0%';
+        }
+
+        function stopAuto() {
+            if (rotateTimer) clearTimeout(rotateTimer);
+
+            const bar = $('#hugastaa_zuraas');
+            const rect = bar.getBoundingClientRect();
+            const pct = (rect.width / window.innerWidth) * 100;
+
+            elapsed += Date.now() - barStart;
+
+            bar.style.transition = "none";
+            bar.style.width = pct + "%";
+        }
+
+
+        function startAuto() {
+            if (paused) return;
+            if (rotateTimer) clearTimeout(rotateTimer);
+
+            const bar = $('#hugastaa_zuraas');
+            const remain = ROTATE_MS - elapsed;
+
+            const pct = Math.min((elapsed / ROTATE_MS) * 100, 100);
+            bar.style.transition = "none";
+            bar.style.width = pct + "%";
+            void bar.offsetWidth;
+
+            bar.style.transition = `width ${remain}ms linear`;
+            bar.style.width = "100%";
+            barStart = Date.now();
+
+            rotateTimer = setTimeout(() => {
+                elapsed = 0;
+                const i = TABS.findIndex(x => x.key === active);
+                active = TABS[(i + 1) % TABS.length].key;
+                render(true);
+            }, remain);
+        }
+
+        function empty(msg) {
+            return el("div", { class: "centerMsg" }, msg);
+        }
+
+        const WEEK = WEEKDAYS_MN;
+
+        function huvaariView(rows) {
+    const wrap = el("div");
+    wrap.innerHTML = `<h2 style="margin-bottom:14px">Хичээлийн хуваарь</h2>`;
+
+    if (!rows || !rows.length || !rows[0].img) {
+        wrap.appendChild(empty("img файл олдсонгүй"));
+        return wrap;
+    }
+
+    const file = rows[0].img;
+    const image = el("img", {
+        src: file,
+        style: `
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            object-fit: contain;
+            pointer-events: none;
+            user-select: none;
+        `
+    });
+
+    wrap.appendChild(image);
+    return wrap;
+}
+
+
+
+        function duguilanView(rows) {
+    const wrap = el("div");
+    wrap.innerHTML = `<h2>Дугуйлангууд</h2>`;
+    if (!rows?.length) return wrap.appendChild(empty("Мэдээлэл байхгүй")), wrap;
+
+    const grid = el("div", { class: "grid cols-3 cols-5-xl", style: "margin-top:14px" });
+
+    rows.forEach(c => {
+        grid.appendChild(
+            el("div", { class: "jijig_hairtsag" },
+                c.image ? el("img", {
+                    src: c.image,
+                    style: "width:100%;height:160px;object-fit:cover"
+                }) : "",
+
+                el("div", { class: "body" },
+                    el("div", { style: "display:flex;justify-content:space-between" },
+                        el("div", { style: "font-weight:700;font-size:18px" },
+                            c.title,
+                            sshine(c.updated) ? Tshine() : ""
+                        ),
+                        el("span", { class: "small budeg" },
+                            WEEK[(c.weekday || '').slice(0, 3)] || ''
+                        )
+                    ),
+                    el("div", { class: "small budeg", style: "margin-top:6px" }, `${c.start}–${c.end} • ${c.place}`),
+                    el("div", { class: "small budeg", style: "margin-top:4px" }, c.teacher)
+                )
+            )
+        );
+    });
+
+    wrap.appendChild(grid);
+    return wrap;
+}
+
+
+        function szuichView(rows) {
+            const wrap = el("div");
+            wrap.innerHTML = `<h2>Сэтгэлзүйчийн цаг</h2><div class="small budeg">QR кодыг уншуулна уу</div>`;
+
+            if (!rows?.length) return wrap.appendChild(empty("Мэдээлэл байхгүй")), wrap;
+
+            const by = { davaa: [], mygmar: [], lhagva: [], purev: [], baasan: [] };
+            rows.forEach(r => {
+                const w = (r.weekday || "").slice(0, 3);
+                if (by[w]) by[w].push(r);
+            });
+
+            const grid = el("div", { class: "grid cols-2 cols-5-xl", style: "margin-top:14px" });
+
+            Object.entries(by).forEach(([k, arr]) => {
+                const body = arr.length ? (() => {
+                    const box = el("div", { style: "display:flex;flex-direction:column;gap:12px;align-items:center" });
+                    arr.forEach(r => {
+                        const qrel = el("div", { style: "width:160px;height:160px" });
+                        new QRCode(qrel, { text: r.qr, width: 160, height: 160 });
+
+                        box.appendChild(
+                            el("div", { class: "item", style: "flex-direction:column;align-items:center" },
+                                el("div", { style: "font-weight:700" }, `${r.start}–${r.end}`),
+                                r.note ? el("div", { class: "small budeg" }, r.note) : "",
+                                qrel,
+                                sshine(r.updated) ? Tshine() : ""
+                            )
+                        );
+                    });
+                    return box;
+                })() : empty("Цаг байхгүй");
+
+                grid.appendChild(el("div", { class: "jijig_hairtsag" },
+                    el("div", { class: "head tsenher" }, WEEK[k]),
+                    el("div", { class: "body" }, body)
+                ));
+            });
+
+            wrap.appendChild(grid);
+            return wrap;
+        }
+
+        function MenuView(rows) {
+            const wrap = el("div");
+            wrap.innerHTML = `<h2>Өдрийн хоолны меню</h2>`;
+
+            if (!rows?.length) return wrap.appendChild(empty("Мэдээлэл байхгүй")), wrap;
+
+            const groups = {};
+            rows.forEach(r => {
+                const c = r.category || "baga";
+                if (!groups[c]) groups[c] = [];
+                groups[c].push(r);
+            });
+
+            const titles = {
+                baga: "Бага анги",
+                ahlah: "Ахлах анги"
+            };
+
+            Object.entries(groups).forEach(([cat, catRows]) => {
+                const section = el("div", { style: "margin-top:20px" });
+                section.appendChild(el("h3", {}, titles[cat] || cat));
+
+                const by = {};
+                catRows.forEach(r => {
+                    by[(r.weekday || '').slice(0, 3)] = r;
+                });
+
+                const grid = el("div", { class: "grid cols-5", style: "margin-top:14px" });
+
+                ['davaa', 'mygmar', 'lhagva', 'purev', 'baasan'].forEach(k => {
+                    const r = by[k] || {};
+                    const dishes = (r.dishes || "").split(";").map(s => s.trim()).filter(Boolean);
+
+                    const body = dishes.length ? (() => {
+                        const ul = el("ul", {
+                            style: "list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px"
+                        });
+
+                        dishes.forEach(d => ul.appendChild(el("li", { class: "item" }, d)));
+
+                        if (r.kcal) ul.appendChild(el("div", { class: "small budeg" }, `~${r.kcal} ккал`));
+                        if (sshine(r.updated)) ul.appendChild(Tshine());
+
+                        return ul;
+                    })() : empty("Цэс байхгүй");
+
+                    grid.appendChild(
+                        el("div", { class: "jijig_hairtsag" },
+                            el("div", { class: "head tsenher" }, WEEK[k]),
+                            el("div", { class: "body" }, body)
+                        )
+                    );
+                });
+
+                section.appendChild(grid);
+                wrap.appendChild(section);
+            });
+
+            return wrap;
+        }
+
+        function duremView(rows) {
+            const wrap = el("div");
+            wrap.innerHTML = `<h2>Сурагчийн дүрэм</h2>`;
+            if (!rows?.length) return wrap.appendChild(empty("Дүрэм байхгүй")), wrap;
+
+            const grid = el("div", { class: "grid cols-2", style: "margin-top:14px" });
+
+            rows.forEach(r => {
+                const bullets = (r.bullets || "")
+                    .split(";")
+                    .map(a => a.trim())
+                    .filter(Boolean);
+
+                const ul = el("ul", {
+                    style: `
+                list-style:none;
+                padding:0;
+                margin:12px 0 0 0;
+                display:flex;
+                flex-direction:column;
+                gap:10px;
+            `
+                });
+
+                bullets.forEach(b => {
+                    ul.appendChild(el("li", { class: "item" }, b));
+                });
+
+                const body = el("div", { class: "body" },
+                    el("div", {
+                        style: "font-weight:700;font-size:18px;display:flex;gap:8px;align-items:center"
+                    }, r.title, sshine(r.updated) ? Tshine() : ""),
+                    ul
+                );
+
+                grid.appendChild(el("div", { class: "jijig_hairtsag" }, body));
+            });
+
+            wrap.appendChild(grid);
+            return wrap;
+        }
+
+        function eventuudView(rows) {
+            const wrap = el("div");
+            wrap.innerHTML = `<h2>Эвент, мэдээ</h2>`;
+            if (!rows?.length) return wrap.appendChild(empty("Эвент байхгүй")), wrap;
+
+            const grid = el("div", { class: "grid cols-2 cols-3-xl", style: "margin-top:14px" });
+
+            rows.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+
+            rows.forEach(e => {
+                grid.appendChild(
+                    el("div", { class: "jijig_hairtsag" },
+                        e.image ? el("img", {
+                            src: e.image,
+                            style: "width:100%;height:160px;object-fit:cover"
+                        }) : "",
+                        el("div", { class: "body" },
+                            el("div", { style: "display:flex;justify-content:space-between" },
+                                el("div", { style: "font-weight:700;font-size:18px;display:flex;gap:8px;align-items:center" }, e.title, sshine(e.updated) ? Tshine() : ""),
+                                el("span", { class: "small budeg" }, `${e.date}${e.time ? " • " + e.time : ""}`)
+                            ),
+                            el("div", { class: "small budeg", style: "margin-top:6px" }, e.place),
+                            e.desc ? el("p", { class: "small", style: "margin-top:8px;line-height:1.5" }, e.desc) : ""
+                        )
+                    )
+                );
+            });
+
+            wrap.appendChild(grid);
+            return wrap;
+        }
+
+        function render(resetTimer) {
+            const c = $("#hh");
+
+            buildTabs();
+
+            c.classList.add("garah");
+
+            setTimeout(() => {
+                c.innerHTML = "";
+
+                const rows = store.data[active] || [];
+
+                let v = null;
+                if (active === 'huvaari') v = huvaariView(rows);
+                if (active === 'duguilan') v = duguilanView(rows);
+                if (active === 'szuich') v = szuichView(rows);
+                if (active === 'menu') v = MenuView(rows);
+                if (active === 'durem') v = duremView(rows);
+                if (active === 'eventuud') v = eventuudView(rows);
+
+                c.appendChild(v);
+
+                c.classList.remove("garah");
+                c.classList.add("oroh");
+                setTimeout(() => c.classList.remove("oroh"), 400);
+
+                if (resetTimer) startAuto();
+            }, 200);
+        }
+
+        function init() {
+            buildTabs();
+            startClock();
+            startPolling();
+            render(true);
+
+            const btn = $('#toggleAuto');
+            const txt = $('#autoText');
+
+            btn.onclick = () => {
+                paused = !paused;
+                btn.classList.toggle("paused", paused);
+                txt.textContent = paused ? "Гар" : "Автомат";
+                if (!paused) startAuto();
+                else stopAuto();
+            };
+
+            startAuto();
+        }
+
+        init();
+    </script>
+</body>
+
+</html>

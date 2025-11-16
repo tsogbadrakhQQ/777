@@ -1,0 +1,345 @@
+{
+
+  "huvaari": [
+    {
+      "img": "huvaari.png"
+    }
+  ],
+  "duguilan": [
+    {
+      "title": "fgn",
+      "type": "tech",
+      "weekday": "mygmar",
+      "start": "15:00",
+      "end": "16:30",
+      "place": "Lab-3",
+      "teacher": "uio",
+      "image": "https://images.ctfassets.net/2htm8llflwdx/1LEJIT9KGRC4nwTJ5vuS6H/a912e31c468fd32986f2818816135cc4/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "fgn",
+      "type": "tech",
+      "weekday": "mygmar",
+      "start": "15:00",
+      "end": "16:30",
+      "place": "Lab-3",
+      "teacher": "uio",
+      "image": "https://images.ctfassets.net/2htm8llflwdx/1LEJIT9KGRC4nwTJ5vuS6H/a912e31c468fd32986f2818816135cc4/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "fgn",
+      "type": "tech",
+      "weekday": "mygmar",
+      "start": "15:00",
+      "end": "16:30",
+      "place": "Lab-3",
+      "teacher": "uio",
+      "image": "https://images.ctfassets.net/2htm8llflwdx/1LEJIT9KGRC4nwTJ5vuS6H/a912e31c468fd32986f2818816135cc4/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "fgn",
+      "type": "tech",
+      "weekday": "mygmar",
+      "start": "15:00",
+      "end": "16:30",
+      "place": "Lab-3",
+      "teacher": "uio",
+      "image": "https://images.ctfassets.net/2htm8llflwdx/1LEJIT9KGRC4nwTJ5vuS6H/a912e31c468fd32986f2818816135cc4/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "fgn",
+      "type": "tech",
+      "weekday": "mygmar",
+      "start": "15:00",
+      "end": "16:30",
+      "place": "Lab-3",
+      "teacher": "uio",
+      "image": "https://images.ctfassets.net/2htm8llflwdx/1LEJIT9KGRC4nwTJ5vuS6H/a912e31c468fd32986f2818816135cc4/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "fgn",
+      "type": "tech",
+      "weekday": "mygmar",
+      "start": "15:00",
+      "end": "16:30",
+      "place": "Lab-3",
+      "teacher": "uio",
+      "image": "https://images.ctfassets.net/2htm8llflwdx/1LEJIT9KGRC4nwTJ5vuS6H/a912e31c468fd32986f2818816135cc4/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "fgn",
+      "type": "tech",
+      "weekday": "mygmar",
+      "start": "15:00",
+      "end": "16:30",
+      "place": "Lab-3",
+      "teacher": "uio",
+      "image": "https://images.ctfassets.net/2htm8llflwdx/1LEJIT9KGRC4nwTJ5vuS6H/a912e31c468fd32986f2818816135cc4/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "fgn",
+      "type": "tech",
+      "weekday": "mygmar",
+      "start": "15:00",
+      "end": "16:30",
+      "place": "Lab-3",
+      "teacher": "uio",
+      "image": "https://images.ctfassets.net/2htm8llflwdx/1LEJIT9KGRC4nwTJ5vuS6H/a912e31c468fd32986f2818816135cc4/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "fgn",
+      "type": "tech",
+      "weekday": "mygmar",
+      "start": "15:00",
+      "end": "16:30",
+      "place": "Lab-3",
+      "teacher": "uio",
+      "image": "https://images.ctfassets.net/2htm8llflwdx/1LEJIT9KGRC4nwTJ5vuS6H/a912e31c468fd32986f2818816135cc4/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "fgn",
+      "type": "tech",
+      "weekday": "mygmar",
+      "start": "15:00",
+      "end": "16:30",
+      "place": "Lab-3",
+      "teacher": "uio",
+      "image": "https://images.ctfassets.net/2htm8llflwdx/1LEJIT9KGRC4nwTJ5vuS6H/a912e31c468fd32986f2818816135cc4/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg",
+      "updated": "2025-11-12"
+    }
+
+  ],
+  "szuich": [
+    {
+      "weekday": "davaa",
+      "start": "13:00",
+      "end": "15:00",
+      "qr": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "note": "Цагийн өмнө бүртгүүлээрэй",
+      "updated": "2025-11-12"
+    },
+    {
+      "weekday": "mygmar",
+      "start": "13:00",
+      "end": "15:00",
+      "qr": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "note": "Цагийн өмнө бүртгүүлээрэй",
+      "updated": "2025-11-12"
+    },
+    {
+      "weekday": "lhagva",
+      "start": "13:00",
+      "end": "15:00",
+      "qr": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "note": "Цагийн өмнө бүртгүүлээрэй",
+      "updated": "2025-11-12"
+    },
+    {
+      "weekday": "purev",
+      "start": "13:00",
+      "end": "15:00",
+      "qr": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "note": "Цагийн өмнө бүртгүүлээрэй",
+      "updated": "2025-11-12"
+    },
+    {
+      "weekday": "baasan",
+      "start": "13:00",
+      "end": "15:00",
+      "qr": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "note": "Цагийн өмнө бүртгүүлээрэй",
+      "updated": "2025-11-12"
+    }
+  ],
+  "menu": [
+    {
+      "category": "baga",
+      "weekday": "davaa",
+      "dishes": "abcdefg; hijklmnop",
+      "kcal": "780",
+      "updated": "2025-11-12"
+    },
+    {
+      "category": "baga",
+      "weekday": "mygmar",
+      "dishes": "abcdefg; hijklmnop",
+      "kcal": "780",
+      "updated": "2025-11-12"
+    },
+    {
+      "category": "baga",
+      "weekday": "lhagva",
+      "dishes": "abcdefg; hijklmnop",
+      "kcal": "780",
+      "updated": "2025-11-12"
+    },
+    {
+      "category": "baga",
+      "weekday": "purev",
+      "dishes": "abcdefg; hijklmnop",
+      "kcal": "780",
+      "updated": "2025-11-12"
+    },
+    {
+      "category": "baga",
+      "weekday": "baasan",
+      "dishes": "abcdefg; hijklmnop",
+      "kcal": "780",
+      "updated": "2025-11-12"
+    },
+    {
+      "category": "ahlah",
+      "weekday": "davaa",
+      "dishes": "menu X; menu Y",
+      "kcal": "900",
+      "updated": "2025-11-12"
+    },
+    {
+      "category": "ahlah",
+      "weekday": "mygmar",
+      "dishes": "menu X; menu Y",
+      "kcal": "900",
+      "updated": "2025-11-12"
+    },
+    {
+      "category": "ahlah",
+      "weekday": "lhagva",
+      "dishes": "menu X; menu Y",
+      "kcal": "900",
+      "updated": "2025-11-12"
+    },
+    {
+      "category": "ahlah",
+      "weekday": "purev",
+      "dishes": "menu X; menu Y",
+      "kcal": "900",
+      "updated": "2025-11-12"
+    },
+    {
+      "category": "ahlah",
+      "weekday": "baasan",
+      "dishes": "menu X; menu Y",
+      "kcal": "900",
+      "updated": "2025-11-12"
+    }
+ 
+  ],
+  "durem": [
+    {
+      "title": "1. xrkdhhg",
+      "bullets": "• lorem jsdfj kjdkjfj jsdjdfh jsdfhf jsffhgk oytuo lafs ;ddfg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "1. xrkdhhg",
+      "bullets": "sdsdf;ddfg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "1. xrkdhhg",
+      "bullets": "sdsdf;ddfg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "1. xrkdhhg",
+      "bullets": "sdsdf;ddfg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "1. xrkdhhg",
+      "bullets": "sdsdf;ddfg",
+      "updated": "2025-11-12"
+    }
+  ],
+  "eventuud": [
+    {
+      "title": "Xmas",
+      "date": "2025-12-25",
+      "place": "ddfg",
+      "desc": "sdfv dr",
+      "image": "https://cdn.britannica.com/38/196638-050-94E05EF4/Santa-Claus.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "Xmas",
+      "date": "2025-12-25",
+      "place": "ddfg",
+      "desc": "sdfv dr",
+      "image": "https://cdn.britannica.com/38/196638-050-94E05EF4/Santa-Claus.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "Xmas",
+      "date": "2025-12-25",
+      "place": "ddfg",
+      "desc": "sdfv dr",
+      "image": "https://cdn.britannica.com/38/196638-050-94E05EF4/Santa-Claus.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "Xmas",
+      "date": "2025-12-25",
+      "place": "ddfg",
+      "desc": "sdfv dr",
+      "image": "https://cdn.britannica.com/38/196638-050-94E05EF4/Santa-Claus.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "Xmas",
+      "date": "2025-12-25",
+      "place": "ddfg",
+      "desc": "sdfv dr",
+      "image": "https://cdn.britannica.com/38/196638-050-94E05EF4/Santa-Claus.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "Xmas",
+      "date": "2025-12-25",
+      "place": "ddfg",
+      "desc": "sdfv dr",
+      "image": "https://cdn.britannica.com/38/196638-050-94E05EF4/Santa-Claus.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "Xmas",
+      "date": "2025-12-25",
+      "place": "ddfg",
+      "desc": "sdfv dr",
+      "image": "https://cdn.britannica.com/38/196638-050-94E05EF4/Santa-Claus.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "Xmas",
+      "date": "2025-12-25",
+      "place": "ddfg",
+      "desc": "sdfv dr",
+      "image": "https://cdn.britannica.com/38/196638-050-94E05EF4/Santa-Claus.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "Xmas",
+      "date": "2025-12-25",
+      "place": "ddfg",
+      "desc": "sdfv dr",
+      "image": "https://cdn.britannica.com/38/196638-050-94E05EF4/Santa-Claus.jpg",
+      "updated": "2025-11-12"
+    },
+    {
+      "title": "Xmas",
+      "date": "2025-12-25",
+      "place": "ddfg",
+      "desc": "sdfv dr",
+      "image": "https://cdn.britannica.com/38/196638-050-94E05EF4/Santa-Claus.jpg",
+      "updated": "2025-11-16"
+    }
+  ]
+}
