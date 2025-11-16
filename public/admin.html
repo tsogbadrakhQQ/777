@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Indra Admin</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto;margin:20px;color:#111}
+    .card{max-width:980px;margin:auto;background:#f7f9fc;padding:16px;border-radius:8px}
+    textarea{width:100%;height:420px;font-family:monospace;padding:8px}
+    input{padding:8px}
+    .row{display:flex;gap:8px;margin-top:8px}
+    button{padding:8px 12px}
+    .muted{color:#556}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Indra Admin</h2>
+    <div id="loginBox">
+      <div class="muted">Нэвтрэх</div>
+      <div class="row" style="margin-top:8px">
+        <input id="pw" type="password" placeholder="Password">
+        <button id="btnLogin">Login</button>
+        <span id="loginMsg" class="muted"></span>
+      </div>
+    </div>
+
+    <div id="adminUI" style="display:none">
+      <div class="row">
+        <button id="btnLoad">Load data.json</button>
+        <button id="btnSave">Save (commit)</button>
+        <button id="btnLogout" style="margin-left:auto">Logout</button>
+      </div>
+      <div style="margin-top:8px" class="muted">Edit the JSON and click Save.</div>
+      <textarea id="editor">{}</textarea>
+      <div id="saveMsg" class="muted" style="margin-top:8px"></div>
+    </div>
+  </div>
+
+  <script>
+    const el = id=>document.getElementById(id);
+    async function postJSON(url, data){
+      const res = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)});
+      return res.json();
+    }
+
+    el('btnLogin').onclick = async ()=>{
+      el('loginMsg').textContent = '';
+      const pw = el('pw').value;
+      if(!pw) return el('loginMsg').textContent='Empty';
+      const r = await postJSON('/login', { password: pw });
+      if(r.ok){ el('loginBox').style.display='none'; el('adminUI').style.display='block'; await loadData(); }
+      else el('loginMsg').textContent = r.error || 'Login failed';
+    };
+
+    el('btnLogout').onclick = async ()=>{ await postJSON('/logout', {}); el('adminUI').style.display='none'; el('loginBox').style.display='block'; };
+
+    async function loadData(){
+      try{
+        const r = await fetch('/api/data'); const txt = await r.text();
+        el('editor').value = txt; el('saveMsg').textContent='Loaded';
+      }catch(e){ el('saveMsg').textContent = 'Load failed: '+e.message; }
+    }
+
+    el('btnLoad').onclick = loadData;
+
+    async function getCsrf(){ const r = await fetch('/api/csrf-token'); const j = await r.json(); return j.csrfToken; }
+
+    el('btnSave').onclick = async ()=>{
+      el('saveMsg').textContent = '';
+      let parsed;
+      try{ parsed = JSON.parse(el('editor').value); }
+      catch(e){ el('saveMsg').textContent = 'JSON parse error: '+e.message; return; }
+
+      try{
+        const token = await getCsrf();
+        const res = await fetch('/api/save', {
+          method:'POST',
+          headers:{'Content-Type':'application/json','X-CSRF-Token': token},
+          body: JSON.stringify(parsed)
+        });
+        const j = await res.json();
+        if(j.ok) el('saveMsg').textContent = 'Saved: '+(j.commitMsg||'');
+        else el('saveMsg').textContent = j.error || 'Save failed';
+      }catch(e){ el('saveMsg').textContent = 'Save error: '+e.message }
+    };
+  </script>
+</body>
+</html>
